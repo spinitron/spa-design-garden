@@ -1,0 +1,205 @@
+/* Garden: xerox flyer. Loud, stamped, still operable. */
+
+html,
+body {
+  background: #0e0e0e;
+  color: #f4f4f0;
+  font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+a {
+  color: #ff4d9a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c8ff3a;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Impact, Haettenschweiler, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 0.3em;
+  line-height: 0.95;
+}
+
+h1 {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  transform: rotate(-1.2deg);
+  transform-origin: left center;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin-top: 1.8rem;
+  border-bottom: 0;
+  background: #ff4d9a;
+  color: #0e0e0e;
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  transform: rotate(0.8deg);
+}
+
+.topbar {
+  background: #c8ff3a;
+  color: #0e0e0e;
+  position: relative;
+  transform: rotate(-0.4deg);
+  margin: 0.4rem 0.4rem 0;
+}
+
+.topbar a,
+.wordmark,
+.topbar__return {
+  color: #0e0e0e;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.topbar__note {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.legal {
+  color: #777;
+  font-size: 0.68rem;
+}
+
+.station-head {
+  align-items: end;
+}
+
+.station-head__logo {
+  outline: 6px solid #ff4d9a;
+  transform: rotate(-3deg);
+  background: #222;
+}
+
+.station-nav {
+  border-bottom: 0;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0;
+}
+
+.station-nav a {
+  background: #f4f4f0;
+  color: #0e0e0e;
+  padding: 0.35rem 0.7rem;
+  margin-right: 0;
+  border-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  transform: rotate(-2deg);
+}
+
+.station-nav a:nth-child(2) {
+  transform: rotate(2.5deg);
+  background: #ff4d9a;
+}
+
+.station-nav a:nth-child(3) {
+  transform: rotate(-1deg);
+  background: #c8ff3a;
+}
+
+.station-nav a.active {
+  outline: 3px dashed #ff4d9a;
+}
+
+.card {
+  border-bottom: 2px dashed #444;
+}
+
+.card--live {
+  background: #1a1a1a;
+  border-left: 8px solid #c8ff3a;
+  transform: rotate(0.4deg);
+}
+
+.muted,
+.count,
+.eyebrow {
+  color: #9a9a92;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.week-nav button,
+.play-btn,
+.listen-live,
+.ark-play,
+.topbar__return:not(.topbar__return--plain) {
+  border: 3px solid #c8ff3a;
+  background: transparent;
+  color: #c8ff3a;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.week-nav button:hover,
+.listen-live:hover,
+.ark-play:hover,
+.play-btn:hover:not(:disabled) {
+  background: #c8ff3a;
+  color: #0e0e0e;
+}
+
+.player-bar {
+  background: #ff4d9a;
+  color: #0e0e0e;
+  border-top: 8px solid #c8ff3a;
+}
+
+.player-bar a {
+  color: #0e0e0e;
+  font-weight: 800;
+}
+
+.player-bar.is-playing .play-btn:not(.speaker-btn) {
+  background: #0e0e0e;
+  border-color: #0e0e0e;
+  color: #c8ff3a;
+}
+
+.spin-list li.is-playhead {
+  background: #2a2410;
+  box-shadow: inset 8px 0 0 #c8ff3a;
+}
+
+.badges {
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.lamp {
+  display: inline-block;
+  font-family: Impact, Haettenschweiler, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.45rem;
+  background: #ff4d9a;
+  color: #0e0e0e;
+  transform: rotate(-2deg);
+  line-height: 1.1;
+}
+
+.lamp::before {
+  content: none;
+}
+
+.lamp--ark {
+  background: #c8ff3a;
+  color: #0e0e0e;
+  transform: rotate(2deg);
+}

@@ -1,0 +1,14 @@
+@import url("/laf/_visual.css");
+
+:root {
+  color-scheme: dark;
+  --paper: #16110a;
+  --paper-2: #221c12;
+  --ink: #f3e6c8;
+  --ink-soft: #a8946a;
+  --rule: #3a3220;
+  --signal: #e0b44a;
+  --tape: #e0b44a;
+  --bar: #0e0b06;
+  --bar-text: #f3e6c8;
+}

@@ -1,0 +1,215 @@
+/* Garden: dated civic. Same furniture as the base. Times, navy, blue links, 3D buttons. */
+
+html,
+body {
+  background: #f4f1e8;
+  color: #111;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+a {
+  color: #00c;
+  text-underline-offset: 0.12em;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:hover {
+  color: #00c;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  letter-spacing: 0;
+  margin: 0 0 0.4em;
+}
+
+h1 {
+  font-size: 1.65rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-top: 1.6rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px dotted #666;
+}
+
+.topbar {
+  background: #003366;
+  color: #fff;
+  border-bottom: 3px solid #001a33;
+  position: static;
+}
+
+.topbar a,
+.wordmark,
+.topbar__return {
+  color: #fff;
+}
+
+.topbar a:visited,
+.topbar__return:visited {
+  color: #ddd;
+}
+
+.topbar a:hover {
+  color: #ff6;
+}
+
+.topbar__note {
+  color: #c5d4e8;
+  font-size: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.legal {
+  background: #eeeadd;
+  color: #444;
+  font-size: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.page,
+.station {
+  width: min(52rem, calc(100% - 1.5rem));
+}
+
+.station-head__logo {
+  border: 1px solid #999;
+  background: #fff;
+}
+
+.station-nav {
+  border-bottom: 1px solid #003366;
+  gap: 0;
+}
+
+.station-nav a {
+  color: #00c;
+  padding: 0.35rem 1.1rem 0.35rem 0;
+}
+
+.station-nav a.active {
+  color: #111;
+  font-weight: bold;
+  border-bottom: 2px solid #003366;
+}
+
+.card {
+  border-bottom: 1px dotted #999;
+}
+
+.card--live {
+  background: #fff8d5;
+  border-left: 4px solid #003366;
+}
+
+.muted,
+.count,
+.page-status,
+.station-head__meta,
+.eyebrow {
+  color: #555;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.week-nav button,
+.play-btn,
+.listen-live,
+.ark-play,
+.topbar__return:not(.topbar__return--plain) {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 0.82rem;
+  border: 2px outset #ddd;
+  background: #e8e4dc;
+  color: #111;
+  border-radius: 0;
+}
+
+.week-nav button:hover,
+.listen-live:hover,
+.ark-play:hover,
+.play-btn:hover:not(:disabled) {
+  background: #d8d4cc;
+  color: #111;
+}
+
+.listen-live--muted {
+  border-style: inset;
+  color: #666;
+}
+
+.player-bar {
+  background: #d4d0c8;
+  color: #111;
+  border-top: 2px outset #eee;
+}
+
+.player-bar a {
+  color: #00c;
+}
+
+.player-bar__clock {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 0.78rem;
+}
+
+.player-bar.is-playing .play-btn:not(.speaker-btn) {
+  background: #003366;
+  color: #fff;
+  border-color: #001a33;
+}
+
+.spin-list li.is-playhead {
+  background: #fff8d5;
+}
+
+.search input {
+  border: 1px inset #999;
+  background: #fff;
+  font-family: inherit;
+}
+
+.badges {
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.lamp {
+  display: inline-block;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 0.62rem;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.38rem 0.08rem;
+  border: 1px outset #336699;
+  background: #003366;
+  color: #fff;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.lamp::before {
+  content: none;
+}
+
+.lamp--ark {
+  border-color: #8a7a30;
+  background: #6b5a12;
+  color: #fff8d5;
+}

@@ -1,0 +1,193 @@
+/* Garden: broadsheet. Columns, rules, a masthead — still public media, not a flyer. */
+
+html,
+body {
+  background: #f6f1e3;
+  color: #1a1714;
+  font-family: Georgia, "Palatino Linotype", Palatino, serif;
+  font-size: 17px;
+  line-height: 1.42;
+}
+
+a {
+  color: #6b1d12;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, #6b1d12 45%, transparent);
+}
+
+a:hover {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  margin: 0 0 0.35em;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 0.82rem;
+  margin-top: 1.7rem;
+  padding: 0.2rem 0;
+  border-top: 3px double #1a1714;
+  border-bottom: 1px solid #1a1714;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.topbar {
+  background: #f6f1e3;
+  color: #1a1714;
+  border-bottom: 4px double #1a1714;
+  position: relative;
+}
+
+.topbar a,
+.wordmark,
+.topbar__return {
+  color: #1a1714;
+}
+
+.topbar__note {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.legal {
+  font-size: 0.68rem;
+  font-style: italic;
+  color: #5a5348;
+}
+
+.catalog-head h1 {
+  text-align: center;
+  border-bottom: 1px solid #1a1714;
+  padding-bottom: 0.6rem;
+}
+
+.station-list {
+  columns: 3 13rem;
+}
+
+.station-head {
+  border-bottom: 3px double #1a1714;
+  padding-bottom: 0.85rem;
+}
+
+.station-nav {
+  justify-content: center;
+  border-bottom: 1px solid #1a1714;
+  margin-top: 0.4rem;
+}
+
+.station-nav a {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a1714;
+  border-bottom: 0;
+  padding: 0.45rem 0.9rem;
+  margin-right: 0;
+}
+
+.station-nav a.active {
+  background: #1a1714;
+  color: #f6f1e3;
+}
+
+.card {
+  border-bottom: 1px solid #cfc6b4;
+}
+
+.card--live {
+  background: transparent;
+  border-left: 0;
+  outline: 2px solid #1a1714;
+  padding: 0.7rem;
+}
+
+.muted,
+.count,
+.eyebrow {
+  color: #5a5348;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+.week-nav button,
+.play-btn,
+.listen-live,
+.ark-play,
+.topbar__return:not(.topbar__return--plain) {
+  border: 1px solid #1a1714;
+  background: #f6f1e3;
+  color: #1a1714;
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+}
+
+.week-nav button:hover,
+.listen-live:hover,
+.ark-play:hover,
+.play-btn:hover:not(:disabled) {
+  background: #1a1714;
+  color: #f6f1e3;
+}
+
+.player-bar {
+  background: #1a1714;
+  color: #f6f1e3;
+  border-top: 4px double #f6f1e3;
+}
+
+.player-bar a {
+  color: #f6f1e3;
+}
+
+.player-bar.is-playing .play-btn:not(.speaker-btn) {
+  background: #6b1d12;
+  border-color: #6b1d12;
+  color: #f6f1e3;
+}
+
+.spin-list li.is-playhead {
+  background: #efe6d2;
+  box-shadow: inset 0 0 0 1px #1a1714;
+}
+
+.badges {
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.lamp {
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.08rem 0.4rem;
+  border: 1px solid #1a1714;
+  background: #1a1714;
+  color: #f6f1e3;
+  line-height: 1.2;
+}
+
+.lamp::before {
+  content: none;
+}
+
+.lamp--ark {
+  background: #f6f1e3;
+  color: #1a1714;
+}

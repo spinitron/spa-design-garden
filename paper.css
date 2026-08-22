@@ -1,0 +1,16 @@
+@import url("/laf/_visual.css");
+
+:root {
+  color-scheme: light;
+  --paper: #f4efe6;
+  --paper-2: #e8e0d2;
+  --ink: #1c1814;
+  --ink-soft: #6f675c;
+  --rule: #d4cbb8;
+  --signal: #b42318;
+  --tape: #9a6b12;
+  --bar: #ebe4d6;
+  --bar-text: #1c1814;
+  --font: "Source Serif 4", Palatino, "Palatino Linotype", Georgia, serif;
+  --display: "Source Serif 4", Palatino, "Palatino Linotype", Georgia, serif;
+}
