@@ -1,10 +1,27 @@
-# SPA Design Garden
+# SPA Design Garden for the Spinitron listener app
 
-These files are copies. The originals live in the Spinitron listener app (`public/laf`, `src/base.css`, `docs/garden`). Edit them there.
 
-Stylesheets for the Spinitron listener app. Use a stock as-is, recolor one, or write your own.
+The Spinitron listener app allows radio fans to listen to live and Ark streams while browsing Playlists, Schedule, Shows, DJs, and so on.
 
-You do **not** change the app’s HTML. You add a CSS file. The app already has a layout (the **functional base**). Your file paints over it.
+As a single-page app (SPA), listening is uninterrupted as the visitor navigates from page to page.
+
+As a web app it has the superpower called **CSS**.
+
+**Garden? What garden?** In May 2003 Dave Shea published the monumental [CSS Zen Garden](https://csszengarden.com/). It showed that, 
+given a sensible HTML document, a designer can do _a lot_ with just a stylesheet. The CSS Zen Garden had hundreds of radically different designs
+but only one HTML doc. It showed how much you can do with CSS, given a decent HTML basis – whole page designs including layout. CSS ain't just 
+colors, font sizes and margins! This repo is named in honor of Shea's CSS Zen Garden.
+
+The Spinitron listener app was built with this kind of CSS-based design as a priority so that
+you don't have to accept someone else's branding or design choices. 
+
+You control the Look and feel (LAF) of the app. 
+
+- Try the stock LAFs in the app. Each LAF has a name.
+- Modify one of the stock LAFs to your needs and use your version.
+- Write a LAF (i.e. CSS stylesheet) of your own and use that.
+
+You do **not** change the app’s HTML. You just choose or add a CSS file. The app already has a layout (the **functional base**). Your file paints over it.
 
 Try while you read (any Station works):
 
@@ -17,11 +34,18 @@ Add `?laf=` and a name to a Station view or the Catalog.
 
 `https://wzbc.q.spinitron.com/?laf=night`
 
-That is enough to demo. To make it the Station default, give helpdesk the **name** (`night`, `canvas`, …).
+That is enough to demo.
+
+Spinitron can change the default LAF for your Station. Call or email with the **name** (`night`, `canvas`, …) of your choice.
+
+We divide the stock LAFs into two categories:
+
+- Primer — just changing colors and type
+- Garden — goes beyond Primer into real design
 
 ## Primer — same furniture, different paint
 
-These files only set color (and sometimes type). They share one layout with the Catalog skin.
+These files only set color and sometimes type. They share the same layout that Spinitron's default Catalog skin uses.
 
 | File | Look |
 | --- | --- |
@@ -30,67 +54,71 @@ These files only set color (and sometimes type). They share one layout with the 
 | `fern.css` | Dark green |
 | `tape.css` | Dark amber |
 | `signal.css` | Dark, red accent |
-| `ink.css` | Black and white, sans |
+| `ink.css` | Black and white, no serif |
 
 Also: `spinitron.css` is the Catalog’s own skin (same system as the primers).
 
-Live copies:
+The CSS files are in this repo. On https:
 
 `https://spa.spinitron.com/laf/paper.css`
 
+
 ## Garden — more personality
 
-These sit on the functional base and may move layout. A dated civic page is a real Look and feel, not a failed design.
+These sit on the functional base and may move layout.
 
 | File | Look |
 | --- | --- |
-| `frumpy.css` | City-hall civic: Times, navy, 3D buttons |
-| `spine.css` | Magazine; navigation as a left spine |
-| `dock.css` | The player is the stage |
-| `broadside.css` | Broadsheet |
+| `frumpy.css` | Dated civic — Times, navy, 3D buttons |
+| `spine.css` | Magazine, navigation on a left spine |
+| `dock.css` | The player is at the top |
+| `broadside.css` | Broadsheet, rules, masthead |
 | `flyer.css` | Xerox poster |
 | `canvas.css` | Handmade / gallery |
 
 `https://spa.spinitron.com/laf/canvas.css`
 
-# 2. Recolor a primer (novice)
 
-This is the intended first custom job.
+# 2. How to recolor a primer
+
+This is the simplest step in customizing one of the stock LAFs, within reach if you can
+edit a `.css` file and the app can fetch it over https.
 
 1. Open `paper.css` (or `night.css` if you want dark).
 2. You will see two things: a line that pulls in `_visual.css`, and a `:root { … }` list of **custom properties** (variables).
 3. Change only the values in `:root`. Save. Reload the app with `?laf=` that file’s name, or with `laf_css=` pointed at your copy (step 4).
 
-Meaning of the names:
+    Meaning of the names:
 
-| Variable | Used for |
-| --- | --- |
-| `--paper` | Page background |
-| `--paper-2` | Slightly different panels |
-| `--ink` | Main text |
-| `--ink-soft` | Quieter text |
-| `--rule` | Lines |
-| `--signal` | Accent (links, live, emphasis) |
-| `--tape` | Second accent |
-| `--bar` | Player bar background |
-| `--bar-text` | Player bar text |
-| `--font` | Body type |
-| `--display` | Headings |
-| `--clock` | Times |
+    | Variable | Used for |
+    | --- | --- |
+    | `--paper` | Page background |
+    | `--paper-2` | Slightly different panels |
+    | `--ink` | Main text |
+    | `--ink-soft` | Quieter text |
+    | `--rule` | Lines |
+    | `--signal` | Accent (links, live, emphasis) |
+    | `--tape` | Second accent |
+    | `--bar` | Player bar background |
+    | `--bar-text` | Player bar text |
+    | `--font` | Body type |
+    | `--display` | Headings |
+    | `--clock` | Times |
 
-`color-scheme: light` or `dark` tells the browser which default form controls to use.
+    `color-scheme: light` or `dark` tells the browser which default form controls to use.
 
-**Contrast:** text must stay readable on the background. If you cannot read a playlist row, pick a darker `--ink` or a lighter `--paper`.
+    **Contrast:** text must stay readable on the background. If you cannot read a playlist row, pick a darker `--ink` or a lighter `--paper`.
+
 
 4. Host your file on **https** (your Station site is fine). Preview:
 
-```
-https://wzbc.q.spinitron.com/?laf_css=https%3A%2F%2Fwww.example.org%2Flisten.css
-```
+    ```
+    https://wzbc.q.spinitron.com/?laf_css=https%3A%2F%2Fwww.example.org%2Flisten.css
+    ```
 
-The value after `laf_css=` is your stylesheet URL, **percent-encoded** (`:` → `%3A`, `/` → `%2F`). `http://` is ignored.
+The value after `laf_css=` is your stylesheet URL, **percent-encoded** (`:` → `%3A`, `/` → `%2F`).
 
-When you like it, helpdesk can store that https URL as the Station default. Then public links do not need `laf_css`.
+When you like it, Spinitron can store that https URL as the Station default and then public links do not need `laf_css`.
 
 ### If you copy a primer to your own server
 
@@ -104,11 +132,13 @@ That path only works **on the listener app**. On your domain, ship `_visual.css`
 
 # 3. See the layout you must keep
 
-`?laf=null` loads **no** Look and feel file. You see the functional base: spacing, the player, lists, navigation. If your stylesheet is empty or broken, this is what must remain usable.
+`?laf=null` loads **no** Look and feel file. You see the functional base: spacing, the player, lists, navigation. If your stylesheet is lost, empty, or broken, this much will always be there and it will remain usable even if it doesn't look good.
 
-Do not assign `null` as the Station’s Catalog Look and feel. It is a workbench, not a skin.
+Do not _use_ `null` as your Station’s LAF. It is not a skin. It's there for a CSS
+designer to study — it's the ground on which they build.
 
-# 4. Write one from scratch
+
+# 4. Write a LAF from scratch
 
 1. Open the app with `?laf=null`.
 2. Create an empty `.css` file. You do not import the base; the app already loaded it.
@@ -116,25 +146,25 @@ Do not assign `null` as the Station’s Catalog Look and feel. It is a workbench
 4. Preview with `laf_css=` as above.
 5. Keep every control usable: Listen live, Play Ark, Schedule week buttons, search, links, the player.
 
-You may change layout (garden files do). Do not hide Listen live, the player, or errors (`.page-status.error`, `.player-bar__error`).
+You may change layout (garden files do). Do not hide Listen live, the player, or errors (`.page-status.error`, `.player-bar__error`). These are basic components for the app to function.
 
 # 5. Modify a garden file
 
 Copy `frumpy.css` if you want something close to an ordinary station site. Copy `broadside.css` or `spine.css` if you want editorial. Copy `canvas.css` or `flyer.css` if you want handmade or loud.
 
-Change colors and type first. Then, if you must, override layout for `.station-nav`, `.player-bar`, `.spin-list`. Test a playlist with cover art, the schedule, and a phone-width window.
+Change colors and type first. Then, if you want, override layout for `.station-nav`, `.player-bar`, `.spin-list`. Test a playlist with cover art, the schedule, and a phone-width window.
 
 # 6. How a visit picks a stylesheet
 
 First match wins:
 
 1. `laf_css` — https URL to a CSS file  
-2. `laf` — stock name, or `null`  
+2. `laf` — stock name (from the lists above), or `null`  
 3. The Station’s Catalog setting (a stock name, or an https URL)
 
-Unknown names and non-https URLs are ignored. The page still opens.
+Unknown LAF names and non-https URLs are ignored and the page still opens.
 
-`return_url`, `laf`, and `laf_css` stay on in-app links when they were valid, so a preview does not reset on the next click.
+`return_url`, `laf`, and `laf_css` stay on in-app links (when they are valid), so a preview does not reset on navigation within the app.
 
 # 7. Class names (the page’s hooks)
 
@@ -205,10 +235,12 @@ The HTML is stable. Style these; do not depend on tag soup inside a playlist des
 | Class | What it is |
 | --- | --- |
 | `.player-bar` | Sticky player |
-| `.player-bar.is-playing` / `--live` / `--ark` | State |
-| `.player-bar__clock` / `__spin` / `__hint` / `__link` / `__error` | Lines in the bar |
-| `.play-btn` / `.speaker-btn` / `.cast-icon` | Controls |
+| `.player-bar.is-playing` / `--live` / `--ark` / `--starting` | State |
+| `.player-bar__clock` / `__spin` / `__hint` / `__link` / `__error` / `__ellipsis` | Lines in the bar |
+| `.play-btn` / `.speaker-btn` / `.cast-icon` | Play, Pause, Cancel, and Speaker. Speaker casts (Chromecast / AirPlay) when this browser can |
 | `.player-audio` | Hidden `<audio>`; do not `display: none` in a way that stops playback |
+
+Idle and starting: no Play/Pause/Speaker. Starting shows Cancel. Do not put Listen live in the player (it belongs on `.station-head__actions`). Loading ellipsis is the bar only, not lock-screen text.
 
 Times on Station pages are **Station time** (that Station’s zone). The player clock is local when Live, and the playhead when Ark.
 
@@ -236,10 +268,57 @@ This tree (and [spa-design-garden](https://github.com/spinitron/spa-design-garde
 
 The listener app also loads webfonts from `/fonts/`. Primers expect Source Serif there. On your own host, use system fonts or host the fonts yourself and point `--font` at them.
 
-# 10. Rules that keep the app honest
+# 10. Get a coding assistant to write your LAF
+
+Writing a LAF CSS file from scratch is something a coding assistant 
+(ChatGPT, Claude, Cursor, etc.) can do 
+easily. Point it at documentation (principally this page) and tell it what
+you want, e.g. that you want it to match the look and feel of your Station's
+web site.
+
+To try this method, copy the prompt below, fill in the two web addresses 
+and your station’s name, and send it.
+
+Open the app with that stylesheet in `laf_css=` in one window
+and your Station's website in another beside it.
+A listener should feel they are still on your site — same colors, type, header, and overall mood.
+
+If the first try is off, tell the assistant what's wrong in plain language (“our header is huge white type on a photo, not a thin black bar”) and go again.
+
+When you have a file you like, send the file (or a link to it) to Spinitron and ask them to make it your station default.
+
+Replace the three `[bracketed]` values in the following prompt.   
+-------- copy from here --------
+```
+Write a look-and-feel CSS file for Spinitron’s listener app so it looks like it belongs to our station website.
+
+Our station: [WZBC]
+Our website: [https://www.wzbc.org/]
+Our listen pages: [https://wzbc.q.spinitron.com/]
+
+Read these first, then look at our website (a few pages, not just the home page):
+
+- https://forum.spinitron.com/t/tuner-the-web-app-for-listening-to-radio-streams-and-browsing-playlists-etc/1820
+- https://github.com/spinitron/spa-design-garden
+
+https://wzbc.q.spinitron.com/?laf=null is the plain layout your CSS should dress. Do not change the app’s HTML. Keep Listen live, the schedule, search, and the audio player working.
+
+Match our real site: background, header, logo, fonts, menus, buttons, and footer. Do not just pick a dark or light theme and change the colors.
+
+Give me one CSS file I can send to Spinitron.
+```
+-------- copy to here --------
+
+
+# 11. Rules that keep the app honest
+
+Please observe these rules for a well-behaved LAF.
 
 - HTTPS only for `laf_css` and for the Station website link.
 - Keep Listen live, Play Ark, navigation, and the player operable.
 - Do not cover the player with `position: fixed` content that cannot be dismissed.
 - Prefer the class names above. If a hook is missing, ask — do not scrape inner playlist HTML.
-- Frumpy is allowed. A Look and feel does not have to look “designed.”
+
+Thank you.
+
+If you need help, call or email Spinitron.

@@ -377,6 +377,39 @@ button {
   text-overflow: ellipsis;
 }
 
+.player-bar__clock--loading {
+  text-overflow: clip;
+}
+
+.player-bar__ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: player-ellipsis 1.2s infinite;
+}
+
+@keyframes player-ellipsis {
+  0%,
+  32.9% {
+    width: 0.4em;
+  }
+  33%,
+  65.9% {
+    width: 0.8em;
+  }
+  66%,
+  100% {
+    width: 1.2em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-bar__ellipsis {
+    animation: none;
+    width: 1.15em;
+  }
+}
+
 .player-bar__spin {
   line-height: 1.35;
   white-space: normal;
@@ -437,9 +470,6 @@ button {
   }
   .spin-art {
     display: none;
-  }
-  .player-bar {
-    flex-wrap: wrap;
   }
   .catalog-head h1 img {
     height: clamp(2.6rem, 14vw, 4rem);
