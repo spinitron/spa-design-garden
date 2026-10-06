@@ -291,7 +291,7 @@ to make it your Station default.
 
 -------- copy from here --------
 ```
-Paint this HTML to match the attached screenshot of our station website.
+Paint this HTML to match the attached screenshot of our station website [inset your website URL here].
 One CSS file. No HTML. No @import.
 .topbar and .player-bar use the screenshot’s header-strip background and
 header-strip text color (e.g. if that strip is teal, use that teal, not something else).
