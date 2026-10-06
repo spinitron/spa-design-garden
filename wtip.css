@@ -1,0 +1,171 @@
+@import url('https://googleapis.com');
+
+/* Base Layout & Typography */
+html {
+    color-scheme: light;
+}
+
+body {
+    background-color: #F0F4F5;
+    color: #494949;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: #2D8E91;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover, a:focus {
+    color: #104A4E;
+}
+
+h1, h2, h3 {
+    color: #255F7E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* Topbar Chrome */
+.topbar {
+    background-color: #2D8E91 !important;
+    color: #ffffff !important;
+}
+
+.topbar__return,
+.topbar__note {
+    color: #ffffff !important;
+}
+
+.topbar a,
+.topbar__return a {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+/* Station Branding & Navigation */
+.station-head {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e5e6;
+}
+
+.station-nav {
+    background-color: #ffffff;
+    color: #343737;
+}
+
+.station-nav a {
+    color: #343737;
+}
+
+.station-nav a:hover,
+.station-nav .is-active {
+    color: #2D8E91;
+}
+
+/* Buttons & Action Elements */
+.listen-live,
+.ark-play {
+    background-color: #2D8E91 !important;
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.listen-live:hover,
+.ark-play:hover {
+    background-color: #104A4E !important;
+    color: #ffffff !important;
+}
+
+/* Lists and Cards */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e5e6;
+    border-radius: 4px;
+}
+
+.card__title {
+    color: #255F7E;
+}
+
+.card__when {
+    color: #494949;
+}
+
+.spin-list {
+    background-color: #ffffff;
+}
+
+.spin-list__time {
+    color: #255F7E;
+    font-weight: 500;
+}
+
+/* Schedule Elements */
+.sched-row {
+    border-bottom: 1px solid #e0e5e6;
+    background-color: #ffffff;
+}
+
+.sched-row:nth-child(even) {
+    background-color: #F0F4F5;
+}
+
+.sched__time {
+    color: #255F7E;
+    font-weight: 500;
+}
+
+.week-nav button {
+    background-color: #ffffff;
+    color: #343737;
+    border: 1px solid #e0e5e6;
+}
+
+.week-nav button:hover,
+.week-nav button.is-active {
+    background-color: #2D8E91;
+    color: #ffffff;
+    border-color: #2D8E91;
+}
+
+/* Player Bar Chrome */
+.player-bar {
+    background-color: #2D8E91 !important;
+    color: #ffffff !important;
+}
+
+.player-bar__clock,
+.player-bar__spin,
+.player-bar__link,
+.player-bar__link a,
+.player-bar span,
+.player-bar div {
+    color: #ffffff !important;
+}
+
+.player-bar .play-btn {
+    background-color: #ffffff !important;
+    color: #2D8E91 !important;
+}
+
+.player-bar.is-playing .play-btn {
+    background-color: #01C59C !important;
+    color: #ffffff !important;
+}
+
+/* Statuses & Errors */
+.muted {
+    color: #768284 !important;
+}
+
+.page-status.error,
+.player-bar__error {
+    background-color: #104A4E;
+    color: #ffffff;
+    border-left: 4px solid #01C59C;
+}

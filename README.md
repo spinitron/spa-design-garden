@@ -270,42 +270,69 @@ The listener app also loads webfonts from `/fonts/`. Primers expect Source Serif
 
 # 10. Get a coding assistant to write your LAF
 
-Writing a LAF CSS file from scratch is something a coding assistant 
-(ChatGPT, Claude, Cursor, etc.) can do 
-easily. Point it at documentation (principally this page) and tell it what
-you want, e.g. that you want it to match the look and feel of your Station's
-web site.
+Use an assistant that accepts an image (ChatGPT is fine). 
+Give it a **screenshot of your site** and the prompt below including the HTML.
+The HTML is the listener app’s layout. It is the same for every Station.
 
-To try this method, copy the prompt below, fill in the two web addresses 
-and your station’s name, and send it.
+**Screenshot.** Open your Station website. Capture the **header strip** — the
+colored bar at the top, with its type — not the whole homepage and not a
+hero photo unless that photo *is* the bar. If the header has two bands (a
+color strip above a white nav), shoot the color strip. That strip is the
+app’s top bar and player bar.
 
-Open the app with that stylesheet in `laf_css=` in one window
-and your Station's website in another beside it.
-A listener should feel they are still on your site — same colors, type, header, and overall mood.
+Attach that image, then paste the prompt.
 
-If the first try is off, tell the assistant what's wrong in plain language (“our header is huge white type on a photo, not a thin black bar”) and go again.
+Open the CSS it returns with `laf_css=` (percent-encode the file’s https URL)
+next to your real site. If the bars are the wrong band or the type is off, say
+so in one sentence and go again.
 
-When you have a file you like, send the file (or a link to it) to Spinitron and ask them to make it your station default.
+When you have a file you like, send it (or a link) to Spinitron and ask them
+to make it your Station default.
 
-Replace the three `[bracketed]` values in the following prompt.   
 -------- copy from here --------
 ```
-Write a look-and-feel CSS file for Spinitron’s listener app so it looks like it belongs to our station website.
+Paint this HTML to match the attached screenshot of our station website.
+One CSS file. No HTML. No @import.
+.topbar and .player-bar use the screenshot’s header-strip background and
+header-strip text color (e.g. if that strip is teal, use that teal, not something else).
+Page background, body text, headings, and links come from the screenshot too.
 
-Our station: [WZBC]
-Our website: [https://www.wzbc.org/]
-Our listen pages: [https://wzbc.q.spinitron.com/]
+HTML (do not change it; only write CSS for these class names):
 
-Read these first, then look at our website (a few pages, not just the home page):
-
-- https://forum.spinitron.com/t/tuner-the-web-app-for-listening-to-radio-streams-and-browsing-playlists-etc/1820
-- https://github.com/spinitron/spa-design-garden
-
-https://wzbc.q.spinitron.com/?laf=null is the plain layout your CSS should dress. Do not change the app’s HTML. Keep Listen live, the schedule, search, and the audio player working.
-
-Match our real site: background, header, logo, fonts, menus, buttons, and footer. Do not just pick a dark or light theme and change the colors.
-
-Give me one CSS file I can send to Spinitron.
+<header class="topbar">
+  <a class="topbar__return"></a>
+  <span class="topbar__note"></span>
+</header>
+<div class="station">
+  <header class="station-head">
+    <img class="station-head__logo">
+    <div>
+      <p class="eyebrow"></p>
+      <h1 class="station-head__title-row">
+        <span class="badges"><span class="lamp"></span><span class="lamp lamp--ark"></span></span>
+      </h1>
+      <div class="station-head__actions">
+        <button class="listen-live"></button>
+        <a class="text-link"></a>
+      </div>
+    </div>
+  </header>
+  <nav class="station-nav"><a class="active"></a></nav>
+  <main class="page">
+    <div class="card card--live"><div class="card__when"></div><a class="card__title"></a></div>
+    <ul class="spin-list"><li><span class="spin-list__time"></span><span class="spin-list__track"></span></li></ul>
+  </main>
+</div>
+<div class="player-bar player-bar--live is-playing">
+  <div class="player-bar__main">
+    <button class="play-btn"></button>
+    <div class="player-bar__copy">
+      <div class="player-bar__clock"></div>
+      <div class="player-bar__spin"></div>
+      <a class="player-bar__link"></a>
+    </div>
+  </div>
+</div>
 ```
 -------- copy to here --------
 
